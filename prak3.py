@@ -1,5 +1,5 @@
 def konversi_biner():
-    print("\n=== KONVERSI DARI BINER ===")
+    print("\n KONVERSI DARI BINER ")
     biner = input("Masukkan bilangan biner (misal 1011): ")
 
     # Validasi agar hanya 0 dan 1
@@ -22,12 +22,9 @@ def konversi_biner():
 
 def menu():
     while True:
-        print("\n============================")
         print("   PROGRAM KONVERSI BILANGAN")
-        print("============================")
         print("1. Konversi Biner ke Desimal dan Heksadesimal")
         print("2. Keluar")
-        print("============================")
 
         pilihan = input("Pilih menu (1-2): ")
 
