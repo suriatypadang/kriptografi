@@ -1,13 +1,6 @@
-# ============================================
-# PROGRAM KONVERSI BILANGAN
-# ============================================
-# Konversi:
-#   1. Biner → Desimal & Heksadesimal
-#   2. Oktal → Desimal, Biner & Heksadesimal
-# ============================================
 
 def konversi_biner():
-    print("\n=== KONVERSI DARI BINER ===")
+    print("\n KONVERSI DARI BINER ")
     biner = input("Masukkan bilangan biner (misal 1011): ")
 
     # Validasi agar hanya 0 dan 1
@@ -25,7 +18,7 @@ def konversi_biner():
 
 
 def konversi_oktal():
-    print("\n=== KONVERSI DARI OKTAL ===")
+    print("\n KONVERSI DARI OKTAL ")
     oktal = input("Masukkan bilangan oktal (misal 157): ")
 
     # Validasi agar hanya 0–7
@@ -37,7 +30,7 @@ def konversi_oktal():
     biner = bin(desimal).replace("0b", "")
     heksa = hex(desimal).replace("0x", "").upper()
 
-    print("\n=== HASIL KONVERSI ===")
+    print("\n HASIL KONVERSI ")
     print(f" Oktal        : {oktal}")
     print(f" Desimal      : {desimal}")
     print(f" Biner        : {biner}")
@@ -46,13 +39,11 @@ def konversi_oktal():
 
 def menu():
     while True:
-        print("\n==============================")
         print("   PROGRAM KONVERSI BILANGAN")
-        print("==============================")
         print("1. Konversi Biner ke Desimal & Heksadesimal")
         print("2. Konversi Oktal ke Desimal, Biner & Heksadesimal")
         print("3. Keluar")
-        print("==============================")
+
 
         pilihan = input("Pilih menu (1-3): ")
 
