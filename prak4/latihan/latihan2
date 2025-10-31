@@ -1,0 +1,56 @@
+# === Fungsi Substitusi Cipher ===
+def substitusi_cipher(plaintext, aturan):
+    ciphertext = ""
+    for char in plaintext.upper():
+        if char in aturan:
+            ciphertext += aturan[char]
+        else:
+            ciphertext += char  # spasi dan tanda baca tidak diubah
+    return ciphertext
+
+
+# === Fungsi Transposisi Cipher ===
+def transposisi_cipher(plaintext):
+    # Bagi teks menjadi 4 blok
+    part_length = len(plaintext) // 4
+    parts = [plaintext[i:i + part_length] for i in range(0, len(plaintext), part_length)]
+
+    ciphertext = ""
+    for col in range(4):
+        for part in parts:
+            if col < len(part):
+                ciphertext += part[col]
+    return ciphertext
+
+
+# === Program Utama ===
+print("=== LATIHAN: SUBSTITUSI + TRANSPOSISI CIPHER ===")
+
+# a. Input plaintext
+plaintext = "UNIKA SANTO THOMAS"  # sesuai soal
+
+# b. Aturan Substitusi Cipher (dari soal sebelumnya)
+aturan_substitusi = {
+    'U': 'K',
+    'N': 'N',
+    'I': 'I',
+    'K': 'K',
+    'A': 'B',
+    'S': 'S',
+    'T': 'T',
+    'O': 'O',
+    'H': 'H',
+    'M': 'M'
+}
+
+# Proses Substitusi Cipher
+cipher_substitusi = substitusi_cipher(plaintext, aturan_substitusi)
+
+# Proses Transposisi Cipher (4 blok)
+cipher_transposisi = transposisi_cipher(cipher_substitusi)
+
+# c. Tampilkan hasil
+print("\n=== HASIL ENKRIPSI ===")
+print(f"Input Plaintext                     : {plaintext}")
+print(f"Ciphertext (Substitusi Cipher)      : {cipher_substitusi}")
+print(f"Ciphertext (Substitusi + Transposisi): {cipher_transposisi}")
